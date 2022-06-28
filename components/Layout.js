@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/Link';
+import Link from 'next/link';
 
 const Layout = ({ children, title }) => {
   return (
@@ -30,7 +30,7 @@ const Layout = ({ children, title }) => {
 
         <main className="container m-auto mt-4 px-4">{children}</main>
         <footer className="flex h-10 justify-center items-center shadow-inner">
-          <p> Copyright &copy; 2022 Amazona</p>
+          <p> Copyright &copy; 2022 Bamazon</p>
         </footer>
       </div>
     </div>
