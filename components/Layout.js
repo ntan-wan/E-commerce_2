@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Store } from '../utils/Store';
 
 const Layout = ({ children, title }) => {
+  const {state, dispatch} = useContext(Store);
+  const {cart} = state;
   return (
-    <div>
+    <>
       <Head>
         <title>{title ? title + 'Bamazon' : 'Bamazon'}</title>
         <meta name="description" content="E-commerce website" />
@@ -19,7 +22,13 @@ const Layout = ({ children, title }) => {
             </Link>
             <div>
               <Link href="/cart">
-                <a className="p-2">Cart</a>
+                <a className="p-2">
+                  Cart
+                  {cart.cartItems.length > 0 && (
+                  <span className="ml-1 rounded-full bg-red-600 px-2 py-1 text-xs font-bold text-white">
+                    {cart.cartItems.reduce((a,c) => a + c.quantity, 0)}
+                  </span>)}
+                </a>
               </Link>
               <Link href="/login">
                 <a className="p-2">Login</a>
@@ -33,7 +42,7 @@ const Layout = ({ children, title }) => {
           <p> Copyright &copy; 2022 Bamazon</p>
         </footer>
       </div>
-    </div>
+    </>
   );
 };
 
