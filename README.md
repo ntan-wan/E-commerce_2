@@ -1,3 +1,3 @@
-# Nextjs tailwind ECommerce website
+# Nextjs tailwind E-commerce website
 
-This is an imitation of Amazon website.
+This is an imitation of the Amazon website.
